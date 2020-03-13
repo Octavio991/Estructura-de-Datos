@@ -94,5 +94,23 @@ public class complejo {
     	complejo resultado = new complejo(producto.real/divisor, producto.imaginario/divisor);
     	return resultado;
     }
+    /*
+    public static boolean comparar(complejo a, complejo b){
+        boolean aux = true;
+        
+        if(a.real==b.real && a.imaginario==b.imaginario){
+            return aux;
+        }
+        else
+            aux = false;
+               
+        return aux;
+    }
+    */
+    
+    public boolean equals(Object resives){
+        complejo valor = (complejo) resives;
+        return(valor.real ==this.real && valor.imaginario==this.imaginario);
+    }
     
 }
