@@ -1,3 +1,4 @@
+package javaapplication54;
 
 public class complejo {
     
@@ -107,11 +108,11 @@ public class complejo {
         return aux;
     }
     */
-    //es otro metodo que se sobreescribe. Se define como est y se indican los parámetros a comparar, en este caso, compara
-    //partes reales e imagnarias
+    
     public boolean equals(Object resives){
         complejo valor = (complejo) resives;
         return(valor.real ==this.real && valor.imaginario==this.imaginario);
     }
+    
     
 }
