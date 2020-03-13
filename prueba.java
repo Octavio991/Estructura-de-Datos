@@ -16,6 +16,9 @@ public class prueba {
         System.out.println(complejo.resta(a,b));
         System.out.println(complejo.producto(a,b));
         System.out.println(a.magnitud());
+        System.out.println(a.equals(b));
+         
+       // Tratar de comparar con"==" solo funciona con típos básicos, no con objetos.
 
         
     }
