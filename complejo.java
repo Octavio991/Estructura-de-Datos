@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author labsycapc13
- */
 public class complejo {
     
     private double real;
@@ -21,13 +12,35 @@ public class complejo {
     public String toString(){
         String aux = "";
         
-        if(imaginario<0) aux += real + "-j" + (-imaginario);
+        if(imaginario<0){
+            aux += real + "-j" + (-imaginario);
+            return aux;
+        }
         
-        if(imaginario==0) aux += real;
+        else if(imaginario==0) {
+        	aux += real;
+        	return aux;
+        }
         
-        if(imaginario>0) aux += real + "+j" + imaginario;
-        
-        return aux;
+        else {
+        	aux += real + "+j" + imaginario;
+        	return aux;
+        }
+           
+    }
+    
+    public double real() {
+    	return real;
+    }
+    
+    public double imaginaria() {
+    	return imaginario;
+    }
+    
+    
+    public double magnitud() {
+    	double magnitud = Math.sqrt(Math.pow(real,2) + Math.pow(imaginario,2));
+    	return magnitud;
     }
     
     public static complejo conjugado(complejo a){
@@ -71,8 +84,15 @@ public class complejo {
         complejo producto = new complejo(r,i);
         
         return producto;
-              
-                
+                             
+    }
+    
+    public static complejo division(complejo a, complejo b) {
+    	complejo conjugado = complejo.conjugado(b);
+    	complejo producto = complejo.producto(a, conjugado);
+    	double divisor = Math.pow(b.magnitud(),2);
+    	complejo resultado = new complejo(producto.real/divisor, producto.imaginario/divisor);
+    	return resultado;
     }
     
 }
